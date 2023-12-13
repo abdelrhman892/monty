@@ -42,7 +42,7 @@ void errrr(int errCode, ...)
 		default:
 			break;
 	}
-    frNodes();
+	frNodes();
 	exit(EXIT_FAILURE);
 }
 
@@ -83,7 +83,7 @@ void moreErrrr(int errCode, ...)
 		default:
 			break;
 	}
-    frNodes();
+	frNodes();
 	exit(EXIT_FAILURE);
 }
 
@@ -111,6 +111,6 @@ void strErrrr(int errCode, ...)
 		default:
 			break;
 	}
-    frNodes();
+	frNodes();
 	exit(EXIT_FAILURE);
 }
