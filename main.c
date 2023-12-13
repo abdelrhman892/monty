@@ -29,7 +29,7 @@ stack_t *creNode(int num)
 
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
-	errrr(4);
+		errrr(4);
 	node->next = NULL;
 	node->prev = NULL;
 	node->n = num;
