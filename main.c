@@ -1,5 +1,4 @@
 #include "monty.h"
-stack_t *head = NULL;
 
 /**
  * main - entry point
@@ -7,10 +6,10 @@ stack_t *head = NULL;
  * @argv: list of arguments
  * Return: always 0
  */
-
 int main(int argc, char *argv[])
 {
-	if (argc != 2)
+    stack_t *head = NULL;
+    if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
@@ -27,7 +26,8 @@ int main(int argc, char *argv[])
  */
 stack_t *creNode(int num)
 {
-	stack_t *node;
+    stack_t *head = NULL;
+    stack_t *node;
 
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
@@ -43,7 +43,8 @@ stack_t *creNode(int num)
  */
 void frNodes(void)
 {
-	stack_t *tmp;
+    stack_t *head = NULL;
+    stack_t *tmp;
 
 	if (head == NULL)
 		return;
@@ -64,7 +65,8 @@ void frNodes(void)
  */
 void addToQueue(stack_t **nNode, __attribute__((unused))unsigned int lnum)
 {
-	stack_t *tmp;
+    stack_t *head = NULL;
+    stack_t *tmp;
 
 	if (nNode == NULL || *nNode == NULL)
 		exit(EXIT_FAILURE);
