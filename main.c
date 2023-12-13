@@ -27,12 +27,12 @@ stack_t *creNode(int numberr)
 {
 	stack_t *nod;
 
-    nod = malloc(sizeof(stack_t));
+	nod = malloc(sizeof(stack_t));
 	if (nod == NULL)
 		errrr(4);
-    nod->next = NULL;
-    nod->prev = NULL;
-    nod->n = numberr;
+	nod->next = NULL;
+	nod->prev = NULL;
+	nod->n = numberr;
 	return (nod);
 }
 
@@ -48,7 +48,7 @@ void frNodes(void)
 
 	while (head != NULL)
 	{
-        TMP = head;
+		TMP = head;
 		head = head->next;
 		free(TMP);
 	}
@@ -71,11 +71,11 @@ void addToQueue(stack_t **nNod, __attribute__((unused))unsigned int lnum)
 		head = *nNod;
 		return;
 	}
-    TMP = head;
+	TMP = head;
 	while (TMP->next != NULL)
-        TMP = TMP->next;
+		TMP = TMP->next;
 
-    TMP->next = *nNod;
+	TMP->next = *nNod;
 	(*nNod)->prev = TMP;
 
 }
