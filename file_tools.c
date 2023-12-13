@@ -1,62 +1,60 @@
 #include "monty.h"
 
 /**
- * open_file - opens a file
- * @file_name: the file namepath
- * Return: void
+ * opFile - opens a file
+ * @fname: the file namepath
  */
 
-void open_file(char *file_name)
+void opFile(char *fname)
 {
-	FILE *fd = fopen(file_name, "r");
+	FILE *fd = fopen(fname, "r");
 
-	if (file_name == NULL || fd == NULL)
-        errrr(2, file_name);
+	if (fname == NULL || fd == NULL)
+        errrr(2, fname);
 
-	read_file(fd);
+    Rfile(fd);
 	fclose(fd);
 }
 
 
 /**
- * read_file - reads a file
- * @fd: pointer to file descriptor
- * Return: void
+ * Rfile - reads a file
+ * @fdir: pointer to file descriptor
  */
 
-void read_file(FILE *fd)
+void Rfile(FILE *fdir)
 {
 	int liNum, fmat = 0;
 	char *buffer = NULL;
 	size_t liN = 0;
 
-	for (liNum = 1; getline(&buffer, &liN, fd) != -1; liNum++)
+	for (liNum = 1; getline(&buffer, &liN, fdir) != -1; liNum++)
 	{
-		fmat = parse_line(buffer, liNum, fmat);
+		fmat = prsLine(buffer, liNum, fmat);
 	}
 	free(buffer);
 }
 
 
 /**
- * parse_line - Separates each line into tokens to determine
+ * prsLine - Separates each line into tokens to determine
  * which function to call
- * @buffer: line from the file
- * @line_number: line number
+ * @buf: line from the file
+ * @lnum: line number
  * @format:  storage format. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
  * Return: Returns 0 if the opcode is stack. 1 if queue.
  */
 
-int parse_line(char *buffer, int line_number, int format)
+int prsLine(char *buf, int lnum, int format)
 {
 	char *oppppo_code, *vlu;
 	const char *nLine = "\n ";
 
-	if (buffer == NULL)
+	if (buf == NULL)
         errrr(4);
 
-	oppppo_code = strtok(buffer, nLine);
+	oppppo_code = strtok(buf, nLine);
 	if (oppppo_code == NULL)
 		return (format);
 
@@ -67,20 +65,19 @@ int parse_line(char *buffer, int line_number, int format)
 	if (strcmp(oppppo_code, "queue") == 0)
 		return (1);
 
-	find_func(oppppo_code, vlu, line_number, format);
+    fFunc(oppppo_code, vlu, lnum, format);
 	return (format);
 }
 
 /**
- * find_func - find the appropriate function for the opcode
- * @opcode: opcode
- * @value: argument of opcode
+ * fFunc - find the appropriate function for the oppocode
+ * @oppocode: oppocode
+ * @vlu: argument of oppocode
  * @format:  storage format. If 0 Nodes will be entered as a stack.
- * @ln: line number
+ * @lnum: line number
  * if 1 nodes will be entered as a queue.
- * Return: void
  */
-void find_func(char *opcode, char *value, int ln, int format)
+void fFunc(char *oppocode, char *vlu, int lnum, int format)
 {
 	int num;
 	int kickOut;
@@ -104,58 +101,58 @@ void find_func(char *opcode, char *value, int ln, int format)
 		{NULL, NULL}
 	};
 
-	if (opcode[0] == '#')
+	if (oppocode[0] == '#')
 		return;
 
 	for (kickOut = 1, num = 0; func_list[num].opcode != NULL; num++)
 	{
-		if (strcmp(opcode, func_list[num].opcode) == 0)
+		if (strcmp(oppocode, func_list[num].opcode) == 0)
 		{
-			call_fun(func_list[num].f, opcode, value, ln, format);
+            cFun(func_list[num].f, oppocode, vlu, lnum, format);
 			kickOut = 0;
 		}
 	}
 	if (kickOut == 1)
-        errrr(3, ln, opcode);
+        errrr(3, lnum, oppocode);
 }
 
 
 /**
- * call_fun - Calls the required function.
- * @func: Pointer to the function that is about to be called.
- * @op: string representing the opcode.
- * @val: string representing a numeric value.
- * @ln: line numeber for the instruction.
+ * cFun - Calls the required function.
+ * @funcc: Pointer to the function that is about to be called.
+ * @opppo: string representing the opcode.
+ * @vlu: string representing a numeric value.
+ * @lnum: line numeber for the instruction.
  * @format: Format specifier. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
  */
-void call_fun(op_func func, char *op, char *val, int ln, int format)
+void cFun(op_func funcc, char *opppo, char *vlu, int lnum, int format)
 {
 	stack_t *nd;
 	int kickOut;
 	int num;
 
 	kickOut = 1;
-	if (strcmp(op, "push") == 0)
+	if (strcmp(opppo, "push") == 0)
 	{
-		if (val != NULL && val[0] == '-')
+		if (vlu != NULL && vlu[0] == '-')
 		{
-			val = val + 1;
+            vlu = vlu + 1;
 			kickOut = -1;
 		}
-		if (val == NULL)
-            errrr(5, ln);
-		for (num = 0; val[num] != '\0'; num++)
+		if (vlu == NULL)
+            errrr(5, lnum);
+		for (num = 0; vlu[num] != '\0'; num++)
 		{
-			if (isdigit(val[num]) == 0)
-                errrr(5, ln);
+			if (isdigit(vlu[num]) == 0)
+                errrr(5, lnum);
 		}
-		nd = create_node(atoi(val) * kickOut);
+		nd = create_node(atoi(vlu) * kickOut);
 		if (format == 0)
-			func(&nd, ln);
+			funcc(&nd, lnum);
 		if (format == 1)
-			add_to_queue(&nd, ln);
+			add_to_queue(&nd, lnum);
 	}
 	else
-		func(&head, ln);
+		funcc(&head, lnum);
 }
