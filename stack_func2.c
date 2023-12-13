@@ -22,7 +22,7 @@ void swapNod(stack_t **stk, unsigned int lnum)
 	stack_t *temp;
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
-        moreErrrr(8, lnum, "swap");
+	moreErrrr(8, lnum, "swap");
 	temp = (*stk)->next;
 	(*stk)->next = temp->next;
 	if (temp->next != NULL)
@@ -43,7 +43,7 @@ void addNod(stack_t **stk, unsigned int lnum)
 	int sumsum;
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
-        moreErrrr(8, lnum, "add");
+	 moreErrrr(8, lnum, "add");
 
 	(*stk) = (*stk)->next;
 	sumsum = (*stk)->n + (*stk)->prev->n;
@@ -64,7 +64,7 @@ void subNod(stack_t **stk, unsigned int lnum)
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 
-        moreErrrr(8, lnum, "sub");
+	moreErrrr(8, lnum, "sub");
 
 
 	(*stk) = (*stk)->next;
@@ -85,10 +85,10 @@ void divNod(stack_t **stk, unsigned int lnum)
 	int sumsum;
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
-        moreErrrr(8, lnum, "div");
+	moreErrrr(8, lnum, "div");
 
 	if ((*stk)->n == 0)
-        moreErrrr(9, lnum);
+	moreErrrr(9, lnum);
 	(*stk) = (*stk)->next;
 	sumsum = (*stk)->n / (*stk)->prev->n;
 	(*stk)->n = sumsum;
