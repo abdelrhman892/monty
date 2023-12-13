@@ -43,7 +43,7 @@ void addNod(stack_t **stk, unsigned int lnum)
 	int sumsum;
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
-	 moreErrrr(8, lnum, "add");
+		moreErrrr(8, lnum, "add");
 
 	(*stk) = (*stk)->next;
 	sumsum = (*stk)->n + (*stk)->prev->n;

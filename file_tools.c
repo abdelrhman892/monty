@@ -10,9 +10,9 @@ void opFile(char *fname)
 	FILE *fd = fopen(fname, "r");
 
 	if (fname == NULL || fd == NULL)
-        errrr(2, fname);
+		errrr(2, fname);
 
-    Rfile(fd);
+	Rfile(fd);
 	fclose(fd);
 }
 
@@ -52,7 +52,7 @@ int prsLine(char *buf, int lnum, int format)
 	const char *nLine = "\n ";
 
 	if (buf == NULL)
-        errrr(4);
+		errrr(4);
 
 	oppppo_code = strtok(buf, nLine);
 	if (oppppo_code == NULL)
@@ -65,7 +65,7 @@ int prsLine(char *buf, int lnum, int format)
 	if (strcmp(oppppo_code, "queue") == 0)
 		return (1);
 
-    fFunc(oppppo_code, vlu, lnum, format);
+	fFunc(oppppo_code, vlu, lnum, format);
 	return (format);
 }
 
@@ -108,12 +108,12 @@ void fFunc(char *oppocode, char *vlu, int lnum, int format)
 	{
 		if (strcmp(oppocode, func_list[num].opcode) == 0)
 		{
-            cFun(func_list[num].f, oppocode, vlu, lnum, format);
+			cFun(func_list[num].f, oppocode, vlu, lnum, format);
 			kickOut = 0;
 		}
 	}
 	if (kickOut == 1)
-        errrr(3, lnum, oppocode);
+		errrr(3, lnum, oppocode);
 }
 
 
@@ -137,21 +137,21 @@ void cFun(op_func funcc, char *opppo, char *vlu, int lnum, int format)
 	{
 		if (vlu != NULL && vlu[0] == '-')
 		{
-            vlu = vlu + 1;
+			vlu = vlu + 1;
 			kickOut = -1;
 		}
 		if (vlu == NULL)
-            errrr(5, lnum);
+			errrr(5, lnum);
 		for (num = 0; vlu[num] != '\0'; num++)
 		{
 			if (isdigit(vlu[num]) == 0)
-                errrr(5, lnum);
+				errrr(5, lnum);
 		}
 		nd = creNode(atoi(vlu) * kickOut);
 		if (format == 0)
 			funcc(&nd, lnum);
 		if (format == 1)
-            addToQueue(&nd, lnum);
+			addToQueue(&nd, lnum);
 	}
 	else
 		funcc(&head, lnum);
