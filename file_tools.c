@@ -86,7 +86,7 @@ void fFunc(char *oppocode, char *vlu, int lnum, int format)
 		{"push",   addToStack},
 		{"pall",   pStack},
 		{"pint",   priTop},
-		{"pop",    popTop},
+		{"pop",   popTop},
 		{"nop",   nop},
 		{"swap",  swapNod},
 		{"add",   addNod},
@@ -96,7 +96,7 @@ void fFunc(char *oppocode, char *vlu, int lnum, int format)
 		{"mod",   modNod},
 		{"pchar", ptc},
 		{"pstr",  pts},
-		{"rot",   rot},
+		{"rotl",  rotl},
 		{"rotr",  rotr},
 		{NULL, NULL}
 	};

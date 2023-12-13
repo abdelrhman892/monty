@@ -75,7 +75,7 @@ void modNod(stack_t **stk, unsigned int lnum);
 /*String operations*/
 void ptc(stack_t **stk, unsigned int lnum);
 void pts(stack_t **stk, unsigned int lnum);
-void rot(stack_t **stk, unsigned int lnum);
+void rotl(stack_t **stk, unsigned int lnum);
 
 /*Error handling*/
 void errrr(int errCode, ...);
