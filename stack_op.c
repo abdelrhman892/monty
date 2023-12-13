@@ -1,44 +1,44 @@
 #include "monty.h"
 
 /**
- * mul_nodes - Adds the top two elements of the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * mulNod - Adds the top two elements of the stk.
+ * @stk: Pointer to a pointer pointing to top node of the stk.
+ * @lnum: Interger representing the line number of of the opcode.
  */
-void mul_nodes(stack_t **stack, unsigned int line_number)
+void mulNod(stack_t **stk, unsigned int lnum)
 {
 	int sumsum;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-        moreErrrr(8, line_number, "mul");
+	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
+        moreErrrr(8, lnum, "mul");
 
-	(*stack) = (*stack)->next;
-	sumsum = (*stack)->n * (*stack)->prev->n;
-	(*stack)->n = sumsum;
-	free((*stack)->prev);
-	(*stack)->prev = NULL;
+	(*stk) = (*stk)->next;
+	sumsum = (*stk)->n * (*stk)->prev->n;
+	(*stk)->n = sumsum;
+	free((*stk)->prev);
+	(*stk)->prev = NULL;
 }
 
 
 /**
- * mod_nodes - Adds the top two elements of the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * modNod - Adds the top two elements of the stk.
+ * @stk: Pointer to a pointer pointing to top node of the stk.
+ * @lnum: Interger representing the line number of of the opcode.
  */
-void mod_nodes(stack_t **stack, unsigned int line_number)
+void modNod(stack_t **stk, unsigned int lnum)
 {
 	int sumsum;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 
-        moreErrrr(8, line_number, "mod");
+        moreErrrr(8, lnum, "mod");
 
 
-	if ((*stack)->n == 0)
-        moreErrrr(9, line_number);
-	(*stack) = (*stack)->next;
-	sumsum = (*stack)->n % (*stack)->prev->n;
-	(*stack)->n = sumsum;
-	free((*stack)->prev);
-	(*stack)->prev = NULL;
+	if ((*stk)->n == 0)
+        moreErrrr(9, lnum);
+	(*stk) = (*stk)->next;
+	sumsum = (*stk)->n % (*stk)->prev->n;
+	(*stk)->n = sumsum;
+	free((*stk)->prev);
+	(*stk)->prev = NULL;
 }

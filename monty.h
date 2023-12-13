@@ -50,35 +50,37 @@ int len_chars(FILE *);
 void fFunc(char *, char *, int, int);
 
 /*Stack operations*/
-stack_t *create_node(int n);
-void free_nodes(void);
-void print_stack(stack_t **, unsigned int);
-void add_to_stack(stack_t **, unsigned int);
-void add_to_queue(stack_t **, unsigned int);
+stack_t *creNode(int num);
+void frNodes(void);
+void pStack(stack_t **stk, unsigned int lnum);
+void addToStack(stack_t **nNode, unsigned int lnum);
+void addToQueue(stack_t **nNode, unsigned int lnum);
 
+/*Stack operations*/
 void cFun(op_func funcc, char *opppo, char *vlu, int lnum, int format);
 
-void print_top(stack_t **, unsigned int);
-void pop_top(stack_t **, unsigned int);
-void nop(stack_t **, unsigned int);
-void swap_nodes(stack_t **, unsigned int);
+/*Stack operations*/
+void priTop(stack_t **stk, unsigned int lnum);
+void popTop(stack_t **stk, unsigned int lnum);
+void nope(stack_t **stk, unsigned int lnum);
+void swapNod(stack_t **stk, unsigned int lnum);
 
 /*Math operations with nodes*/
-void add_nodes(stack_t **, unsigned int);
-void sub_nodes(stack_t **, unsigned int);
-void div_nodes(stack_t **, unsigned int);
-void mul_nodes(stack_t **, unsigned int);
-void mod_nodes(stack_t **, unsigned int);
+void addNod(stack_t **stk, unsigned int lnum);
+void subNod(stack_t **stk, unsigned int lnum);
+void divNod(stack_t **stk, unsigned int lnum);
+void mulNod(stack_t **stk, unsigned int lnum);
+void modNod(stack_t **stk, unsigned int lnum);
 
 /*String operations*/
-void print_char(stack_t **, unsigned int);
-void print_str(stack_t **, unsigned int);
-void rotl(stack_t **, unsigned int);
+void ptc(stack_t **stk, unsigned int lnum);
+void pts(stack_t **stk, unsigned int lnum);
+void rottal(stack_t **stk, unsigned int lnum);
 
-/*Error hanlding*/
+/*Error handling*/
 void errrr(int errCode, ...);
 void moreErrrr(int errCode, ...);
 void strErrrr(int errCode, ...);
-void rotr(stack_t **, unsigned int);
+void rortro(stack_t **stk, unsigned int lnum);
 
 #endif

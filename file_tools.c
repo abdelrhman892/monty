@@ -83,21 +83,21 @@ void fFunc(char *oppocode, char *vlu, int lnum, int format)
 	int kickOut;
 
 	instruction_t func_list[] = {
-		{"push", add_to_stack},
-		{"pall", print_stack},
-		{"pint", print_top},
-		{"pop", pop_top},
-		{"nop", nop},
-		{"swap", swap_nodes},
-		{"add", add_nodes},
-		{"sub", sub_nodes},
-		{"div", div_nodes},
-		{"mul", mul_nodes},
-		{"mod", mod_nodes},
-		{"pchar", print_char},
-		{"pstr", print_str},
-		{"rotl", rotl},
-		{"rotr", rotr},
+		{"push",  addToStack},
+		{"pall",  pStack},
+		{"pint",  priTop},
+		{"pop",    popTop},
+		{"nope",   nope},
+		{"swap",   swapNod},
+		{"add",    addNod},
+		{"sub",    subNod},
+		{"div",    divNod},
+		{"mul",    mulNod},
+		{"mod",    modNod},
+		{"pchar",  ptc},
+		{"pstr",   pts},
+		{"rottal", rottal},
+		{"rortro", rortro},
 		{NULL, NULL}
 	};
 
@@ -147,11 +147,11 @@ void cFun(op_func funcc, char *opppo, char *vlu, int lnum, int format)
 			if (isdigit(vlu[num]) == 0)
                 errrr(5, lnum);
 		}
-		nd = create_node(atoi(vlu) * kickOut);
+		nd = creNode(atoi(vlu) * kickOut);
 		if (format == 0)
 			funcc(&nd, lnum);
 		if (format == 1)
-			add_to_queue(&nd, lnum);
+            addToQueue(&nd, lnum);
 	}
 	else
 		funcc(&head, lnum);
