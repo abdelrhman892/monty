@@ -47,11 +47,11 @@ void pts(stack_t **stk, __attribute__((unused))unsigned int lnum)
 }
 
 /**
- * rottal - Rotates the first node of the stk to the bottom.
+ * rot - Rotates the first node of the stk to the bottom.
  * @stk: Pointer to a pointer pointing to top node of the stk.
  * @lnum: Interger representing the line number of of the opcode.
  */
-void rottal(stack_t **stk, __attribute__((unused))unsigned int lnum)
+void rot(stack_t **stk, __attribute__((unused))unsigned int lnum)
 {
 	stack_t *temp;
 
@@ -71,11 +71,11 @@ void rottal(stack_t **stk, __attribute__((unused))unsigned int lnum)
 
 
 /**
- * rortro - Rotates the last node of the stk to the top.
+ * rotr - Rotates the last node of the stk to the top.
  * @stk: Pointer to a pointer pointing to top node of the stk.
  * @lnum: Interger representing the line number of of the opcode.
  */
-void rortro(stack_t **stk, __attribute__((unused))unsigned int lnum)
+void rotr(stack_t **stk, __attribute__((unused))unsigned int lnum)
 {
 	stack_t *temp;
 

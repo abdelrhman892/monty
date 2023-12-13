@@ -75,12 +75,12 @@ void modNod(stack_t **stk, unsigned int lnum);
 /*String operations*/
 void ptc(stack_t **stk, unsigned int lnum);
 void pts(stack_t **stk, unsigned int lnum);
-void rottal(stack_t **stk, unsigned int lnum);
+void rot(stack_t **stk, unsigned int lnum);
 
 /*Error handling*/
 void errrr(int errCode, ...);
 void moreErrrr(int errCode, ...);
 void strErrrr(int errCode, ...);
-void rortro(stack_t **stk, unsigned int lnum);
+void rotr(stack_t **stk, unsigned int lnum);
 
 #endif
