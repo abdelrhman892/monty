@@ -10,7 +10,7 @@ void ptc(stack_t **stk, unsigned int lnum)
 	int asc;
 
 	if (stk == NULL || *stk == NULL)
-        strErrrr(11, lnum);
+	strErrrr(11, lnum);
 
 	asc = (*stk)->n;
 	if (asc < 0 || asc > 127)
@@ -31,11 +31,11 @@ void pts(stack_t **stk, __attribute__((unused))unsigned int lnum)
 	if (stk == NULL || *stk == NULL)
 	{
 		printf("\n");
-		return;
+	return;
 	}
 
 	temp = *stk;
-	while (temp != NULL)
+while (temp != NULL)
 	{
 		asc = temp->n;
 		if (asc <= 0 || asc > 127)
