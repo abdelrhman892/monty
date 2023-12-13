@@ -14,7 +14,7 @@ void ptc(stack_t **stk, unsigned int lnum)
 
 	asc = (*stk)->n;
 	if (asc < 0 || asc > 127)
-        strErrrr(10, lnum);
+	strErrrr(10, lnum);
 	printf("%c\n", asc);
 }
 
@@ -35,7 +35,7 @@ void pts(stack_t **stk, __attribute__((unused))unsigned int lnum)
 	}
 
 	temp = *stk;
-while (temp != NULL)
+	while (temp != NULL)
 	{
 		asc = temp->n;
 		if (asc <= 0 || asc > 127)
