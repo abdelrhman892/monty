@@ -54,7 +54,7 @@ void popTop(stack_t **stk, unsigned int lnum)
 	stack_t *temp;
 
 	if (stk == NULL || *stk == NULL)
-        moreErrrr(7, lnum);
+	moreErrrr(7, lnum);
 
 	temp = *stk;
 	*stk = temp->next;
@@ -71,6 +71,6 @@ void popTop(stack_t **stk, unsigned int lnum)
 void priTop(stack_t **stk, unsigned int lnum)
 {
 	if (stk == NULL || *stk == NULL)
-        moreErrrr(6, lnum);
+	moreErrrr(6, lnum);
 	printf("%d\n", (*stk)->n);
 }
