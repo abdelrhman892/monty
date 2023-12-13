@@ -62,7 +62,7 @@ void cFun(op_func funcc, char *opppo, char *vlu, int lnum, int format);
 /*Stack operations*/
 void priTop(stack_t **stk, unsigned int lnum);
 void popTop(stack_t **stk, unsigned int lnum);
-void nope(stack_t **stk, unsigned int lnum);
+void nop(stack_t **stk, unsigned int lnum);
 void swapNod(stack_t **stk, unsigned int lnum);
 
 /*Math operations with nodes*/

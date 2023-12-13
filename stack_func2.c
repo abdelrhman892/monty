@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * nope - Does nothing.
+ * nop - Does nothing.
  * @stk: Pointer to a pointer pointing to top node of the stk.
  * @lnum: Interger representing the line number of of the opcode.
  */
-void nope(stack_t **stk, unsigned int lnum)
+void nop(stack_t **stk, unsigned int lnum)
 {
 	(void)stk;
 	(void)lnum;

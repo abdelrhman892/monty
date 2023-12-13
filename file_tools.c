@@ -83,11 +83,11 @@ void fFunc(char *oppocode, char *vlu, int lnum, int format)
 	int kickOut;
 
 	instruction_t func_list[] = {
-		{"push",  addToStack},
-		{"pall",  pStack},
-		{"pint",  priTop},
+		{"push",   addToStack},
+		{"pall",   pStack},
+		{"pint",   priTop},
 		{"pop",    popTop},
-		{"nope",   nope},
+		{"nop",    nop},
 		{"swap",   swapNod},
 		{"add",    addNod},
 		{"sub",    subNod},
