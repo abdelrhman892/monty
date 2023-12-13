@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-    opFile(argv[1]);
-    frNodes();
+	opFile(argv[1]);
+	frNodes();
 	return (0);
 }
 
@@ -31,7 +31,7 @@ stack_t *creNode(int num)
 
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
-        errrr(4);
+	errrr(4);
 	node->next = NULL;
 	node->prev = NULL;
 	node->n = num;
