@@ -10,7 +10,7 @@ void mulNod(stack_t **stk, unsigned int lnum)
 	int sumsum;
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
-        moreErrrr(8, lnum, "mul");
+	moreErrrr(8, lnum, "mul");
 
 	(*stk) = (*stk)->next;
 	sumsum = (*stk)->n * (*stk)->prev->n;
@@ -31,11 +31,11 @@ void modNod(stack_t **stk, unsigned int lnum)
 
 	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
 
-        moreErrrr(8, lnum, "mod");
+	moreErrrr(8, lnum, "mod");
 
 
 	if ((*stk)->n == 0)
-        moreErrrr(9, lnum);
+	moreErrrr(9, lnum);
 	(*stk) = (*stk)->next;
 	sumsum = (*stk)->n % (*stk)->prev->n;
 	(*stk)->n = sumsum;
