@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * err - Prints appropiate error messages determined by their error code.
- * @error_code: The error codes are the following:
+ * errrr - Prints appropiate error messages determined by their error code.
+ * @errCode: The error codes are the following:
  * (1) => The user does not give any file or more than one file to the program.
  * (2) => The file provided is not a file that can be opened or read.
  * (3) => The file provided contains an invalid instruction.
@@ -12,14 +12,14 @@
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  */
-void err(int error_code, ...)
+void errrr(int errCode, ...)
 {
 	va_list agugu;
 	char *oppppo;
 	int lNum;
 
-	va_start(agugu, error_code);
-	switch (error_code)
+	va_start(agugu, errCode);
+	switch (errCode)
 	{
 		case 1:
 			fprintf(stderr, "USAGE: monty file\n");
@@ -47,21 +47,21 @@ void err(int error_code, ...)
 }
 
 /**
- * more_err - handles errors.
- * @error_code: The error codes are the following:
+ * moreErrrr - handles errors.
+ * @errCode: The error codes are the following:
  * (6) => When the stack it empty for pint.
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  * (9) => Division by zero.
  */
-void more_err(int error_code, ...)
+void moreErrrr(int errCode, ...)
 {
 	va_list agugu;
 	char *oppppo;
 	int lNum;
 
-	va_start(agugu, error_code);
-	switch (error_code)
+	va_start(agugu, errCode);
+	switch (errCode)
 	{
 		case 6:
 			fprintf(stderr, "L%d: can't pint, stack empty\n",
@@ -88,19 +88,19 @@ void more_err(int error_code, ...)
 }
 
 /**
- * string_err - handles errors.
- * @error_code: The error codes are the following:
+ * strErrrr - handles errors.
+ * @errCode: The error codes are the following:
  * (10) ~> The number inside a node is outside ASCII bounds.
  * (11) ~> The stack is empty.
  */
-void string_err(int error_code, ...)
+void strErrrr(int errCode, ...)
 {
 	va_list agugu;
 	int lNum;
 
-	va_start(agugu, error_code);
+	va_start(agugu, errCode);
 	lNum = va_arg(agugu, int);
-	switch (error_code)
+	switch (errCode)
 	{
 		case 10:
 			fprintf(stderr, "L%d: can't pchar, value out of range\n", lNum);
