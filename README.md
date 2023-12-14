@@ -17,4 +17,11 @@ Files containing Monty byte codes usually have the .m extension. Most of the ind
 8. mul
 9. mod
 10. comments
-
+11. pchar
+12. pstr
+13. rotl
+14. rotr
+15. stack, queue
+16. Brain
+17. Add two digits
+18. Multiplication
