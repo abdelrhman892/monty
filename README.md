@@ -10,3 +10,7 @@ Files containing Monty byte codes usually have the .m extension. Most of the ind
 1. pint
 2. pop
 3. swap
+4. add
+5. nop
+6. sub
+7. div
