@@ -1,41 +1,39 @@
 #include "monty.h"
 stack_t *head = NULL;
-
 /**
  * main - entry point
- * @argc: arguments count
- * @argv: list of arguments
+ * @argccc: arguments count
+ * @argvvv: list of arguments
  * Return: always 0
  */
-
-int main(int argc, char *argv[])
+int main(int argccc, char *argvvv[])
 {
-	if (argc != 2)
+	if (argccc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	opFile(argv[1]);
+	opFile(argvvv[1]);
 	frNodes();
 	return (0);
 }
 
 /**
  * creNode - Creates a node.
- * @num: Number to go inside the node.
+ * @numberr: Number to go inside the node.
  * Return: Upon sucess a pointer to the node. Otherwise NULL.
  */
-stack_t *creNode(int num)
+stack_t *creNode(int numberr)
 {
-	stack_t *node;
+	stack_t *nod;
 
-	node = malloc(sizeof(stack_t));
-	if (node == NULL)
-	errrr(4);
-	node->next = NULL;
-	node->prev = NULL;
-	node->n = num;
-	return (node);
+	nod = malloc(sizeof(stack_t));
+	if (nod == NULL)
+		errrr(4);
+	nod->next = NULL;
+	nod->prev = NULL;
+	nod->n = numberr;
+	return (nod);
 }
 
 /**
@@ -43,41 +41,41 @@ stack_t *creNode(int num)
  */
 void frNodes(void)
 {
-	stack_t *tmp;
+	stack_t *TMP;
 
 	if (head == NULL)
 		return;
 
 	while (head != NULL)
 	{
-		tmp = head;
+		TMP = head;
 		head = head->next;
-		free(tmp);
+		free(TMP);
 	}
 }
 
 
 /**
  * addToQueue - Adds a node to the queue.
- * @nNode: Pointer to the new node.
+ * @nNod:Pointer to the new node.
  * @lnum: line number of the opcode.
  */
-void addToQueue(stack_t **nNode, __attribute__((unused))unsigned int lnum)
+void addToQueue(stack_t **nNod, __attribute__((unused))unsigned int lnum)
 {
-	stack_t *tmp;
+	stack_t *TMP;
 
-	if (nNode == NULL || *nNode == NULL)
+	if (nNod == NULL || *nNod == NULL)
 		exit(EXIT_FAILURE);
 	if (head == NULL)
 	{
-		head = *nNode;
+		head = *nNod;
 		return;
 	}
-	tmp = head;
-	while (tmp->next != NULL)
-		tmp = tmp->next;
+	TMP = head;
+	while (TMP->next != NULL)
+		TMP = TMP->next;
 
-	tmp->next = *nNode;
-	(*nNode)->prev = tmp;
+	TMP->next = *nNod;
+	(*nNod)->prev = TMP;
 
 }

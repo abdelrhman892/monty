@@ -50,11 +50,11 @@ int len_chars(FILE *);
 void fFunc(char *, char *, int, int);
 
 /*Stack operations*/
-stack_t *creNode(int num);
+stack_t *creNode(int numberr);
 void frNodes(void);
 void pStack(stack_t **stk, unsigned int lnum);
 void addToStack(stack_t **nNode, unsigned int lnum);
-void addToQueue(stack_t **nNode, unsigned int lnum);
+void addToQueue(stack_t **nNod, unsigned int lnum);
 
 /*Stack operations*/
 void cFun(op_func funcc, char *opppo, char *vlu, int lnum, int format);
