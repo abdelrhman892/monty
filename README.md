@@ -14,3 +14,7 @@ Files containing Monty byte codes usually have the .m extension. Most of the ind
 5. nop
 6. sub
 7. div
+8. mul
+9. mod
+10. comments
+
